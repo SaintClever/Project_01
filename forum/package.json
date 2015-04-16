@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "forumApp.js",
   "author": "Jeffrey Konowitch",
-  "editor": "Nesta Saint. Clever Parchment"
+  "editor": "Nesta Saint. Clever Parchment",
   "license": "MIT",
   "dependencies": {
     "express": "^4.12.3",
