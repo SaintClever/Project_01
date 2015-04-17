@@ -1,9 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>New Topics</title>
+  <meta charset="UTF-8">
+  <title>Topics</title>
 </head>
 <body>
-  <a href="#">New Topics</a>
+  <a href='/'>Topics</a>
 
+  <ul>
+    {{#allDemPuppies}} <!-- links arre always get request-->
+      <li><a href="/Topics/{{id}}">{{title}} - {{Body}} - {{Vote}} - {{Written}}</a></li>
+    {{/allDemPuppies}}
+  </ul>
 </body>
 </html>
+
+<!-- // db.run("INSERT INTO Topics (Title, Body, Vote, Writtten_by) VALUES ('JavaScript Desktop Apps', 'Comment_01', 0, 'Bobby');"); -->
