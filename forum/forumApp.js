@@ -28,8 +28,9 @@ app.get('/', function(req, res){ // my request is '/' and the the reponse is'./v
 // The Forum Page: get('/topics')
 // Requests Create Your Topic page with the route of get('/topics/new') through New Topic link
 // Requests individual Topic Title ID page with the route of get('topics/:ID') if one of the Topics are clicked
-app.get('/', function(req, res){ // my request is '/topics' and the the reponse is'./views/index.html'
-  res.send(fs.readFileSync('./views/index.html', 'utf8'));
+app.post('/topics/new', function(req, res){ // my request is '/topics' and the the reponse is'./views/index.html'
+  db.run("INSERT INTO Topics ")
+  res.send(fs.readFileSync('./views/new.html', 'utf8'));
 });
 
 
