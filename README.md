@@ -37,25 +37,25 @@ Users should be able to create topics, and other users should be able to comment
 
 ![ERD](https://github.com/SaintClever/Knope/blob/master/w04/d05/Homework/ERD.jpg)
 
-### Topic Table - Correlates to comments table by FOREIGN KEY
+### Topic Table - Correlates to comments table
 
-| ID | Title                     | Body      | Vote | Commenter |
-|----|---------------------------|-----------|------|-----------|
-| 1  | JavaScript Desktop Apps   | Comment_1 |   9  | Bobby     |
-| 2  | Node.js & Express         | Comment_2 |   7  | Cary      |
-| 3  | Ruby gone mobile          | Comment_3 |   3  | Kangil    |
-| 4  | Adobe's Brackets Editor   | Comment_4 |   6  | Efosa     |
-| 5  | Chuck Norris tames Python | Comment_5 |  22  | Mickey    |
+| ID | Title                     | Body      | Vote | Written_by |
+|----|---------------------------|-----------|------|------------|
+| 1  | JavaScript Desktop Apps   | Comment_1 |   9  | Bobby      |
+| 2  | Node.js & Express         | Comment_2 |   7  | Cary       |
+| 3  | Ruby gone mobile          | Comment_3 |   3  | Kangil     |
+| 4  | Adobe's Brackets Editor   | Comment_4 |   6  | Efosa      |
+| 5  | Chuck Norris tames Python | Comment_5 |  22  | Mickey     |
 
 <br/>
 
 
-### Comments Table - Correlates to Topics table
+### Comments Table - Correlates to Topics table by FOREIGN KEY
 
-| ID | Topic_ID | Body      | Location                         |
-|----|----------|-----------|----------------------------------|
-| 1  |    1     | Comment_1 | [ipinfo.io](http://ipinfo.io/)_1 |
-| 2  |    2     | Comment_2 | [ipinfo.io](http://ipinfo.io/)_2 |
-| 3  |    3     | Comment_3 | [ipinfo.io](http://ipinfo.io/)_3 |
-| 4  |    4     | Comment_4 | [ipinfo.io](http://ipinfo.io/)_4 |
-| 5  |    5     | Comment_5 | [ipinfo.io](http://ipinfo.io/)_5 |
+| Body      | Location                         | Topics_ID |
+|-----------|----------------------------------|-----------|
+| Comment_1 | [ipinfo.io](http://ipinfo.io/)_1 |     1     |
+| Comment_2 | [ipinfo.io](http://ipinfo.io/)_2 |     2     |
+| Comment_3 | [ipinfo.io](http://ipinfo.io/)_3 |     3     |
+| Comment_4 | [ipinfo.io](http://ipinfo.io/)_4 |     4     |
+| Comment_5 | [ipinfo.io](http://ipinfo.io/)_5 |     5     |
