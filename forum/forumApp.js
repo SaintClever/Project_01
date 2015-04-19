@@ -62,11 +62,17 @@ app.get('/topics/:id', function(req, res){
 
 ///////////////////////// 
 
-//deleting a specific puppy
-app.put('/topics/:id', function(req, res){
+app.get('/topics/:id', function(req, res){
   var id = req.params.id;
-  db.run("INSERT INTO topics WHERE id = " + id + ";");
-  res.redirect("/topics");
+  db.all("SELECT * FROM commets WHERE id = " + id + ";", {}, function(err, topics){
+    fs.readFile('./views/topics/show.html', 'utf8', function(err, htmlPid){//we use a readfile to stop and wait for all the data to load before proceeding. 
+      console.log(topics);
+      // console.log(htmlPid);
+      // Sending just the single puppy object. No need to iterate this way. Sweet.
+      var renderedHTML = Mustache.render(htmlPid, comments[0].topics_id);//jumps into the first index of the array
+      res.send(renderedHTML);
+    });
+  });
 });
 
 
