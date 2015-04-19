@@ -1,0 +1,18 @@
+<!DOCTYPE html> <!-- this is refered to as puppies.html for neel -->
+<html lang="en">
+<head>
+<!-- <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+ -->  <meta charset="UTF-8">
+  <title>Forum</title>
+</head>
+<body>
+  <a href='/topics/index'><h1>Create your topic</h1></a>
+  <h3>Comment by clicking on current topic</h3>
+  <ul>
+    {{#allDemTopics}}
+      <li><a href="/topics/{{id}}">{{title}} - {{body}} - {{vote}} - {{written_by}}</a></li>
+    {{/allDemTopics}}
+  </ul>
+
+</body>
+</html>

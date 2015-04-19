@@ -2,7 +2,7 @@ var sqlite3 = require('sqlite3').verbose(); // require sqlite3
 var db = new sqlite3.Database('./forumDB.db'); // use 'new' to create a new database
 
 
-db.run("CREATE TABLE Topics (Topics_ID INTEGER PRIMARY KEY AUTOINCREMENT, Title varchar, Body text, Vote integer, Writtten_by varchar);");
+db.run("CREATE TABLE topics (id INTEGER PRIMARY KEY AUTOINCREMENT, title varchar, body text, vote integer, written_by varchar);");
 
 /*
 Topics Table - Correlates to comments table
@@ -16,7 +16,7 @@ Topics Table - Correlates to comments table
 | 5  | Chuck Norris tames Python | Comment_05 |   0  | Mickey     |
 */
 
-db.run("CREATE TABLE Comments (Comments_ID INTEGER PRIMARY KEY AUTOINCREMENT, Body text, Location varchar, Topics_ID integer, FOREIGN KEY (Topics_ID) REFERENCES topics (id));");
+db.run("CREATE TABLE comments (id INTEGER PRIMARY KEY AUTOINCREMENT, body text, location varchar, topics_id integer, FOREIGN KEY (topics_id) REFERENCES topics (id));");
 
 /*
 Comments Table - Correlates to Topics table by FOREIGN KEY
